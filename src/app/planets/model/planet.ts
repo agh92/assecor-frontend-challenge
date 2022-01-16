@@ -13,3 +13,15 @@ export interface Planet extends SwapyObject {
   residents: string[];
   films: string[];
 }
+
+export interface ExpandedFilm extends SwapyObject {
+  title: string;
+}
+
+export interface ExpandedResident extends SwapyObject {
+  name: string;
+}
+
+export type ExpandedPlanet = Omit<Planet, 'films' | 'residents'> & { films: ExpandedFilm[] } & {
+  residents: ExpandedResident[];
+};

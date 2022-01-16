@@ -13,3 +13,13 @@ export interface Film extends SwapyObject {
   title: string;
   vehicles: string[];
 }
+
+export interface ExpandedObject extends SwapyObject {
+  name: string;
+}
+
+export type ExpandedFilm = Omit<Film, 'planets' | 'characters'> & {
+  characters: ExpandedObject[];
+} & {
+  planets: ExpandedObject[];
+};

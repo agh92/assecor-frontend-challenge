@@ -15,3 +15,15 @@ export interface Person extends SwapyObject {
   vehicles: string[];
   starships: string[];
 }
+
+export interface ExpandedFilm extends SwapyObject {
+  title: string;
+}
+
+export interface ExpandedHomeworld extends SwapyObject {
+  name: string;
+}
+
+export type ExpandedPerson = Omit<Person, 'films' | 'homeworld'> & { films: ExpandedFilm[] } & {
+  homeworld: ExpandedHomeworld;
+};
