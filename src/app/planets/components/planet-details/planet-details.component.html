@@ -1,1 +1,11 @@
-<p>planet-details works!</p>
+<app-details-header [title]="'Planet Details'" [subtitle]="(planet$|async)?.name">
+</app-details-header>
+
+<app-details-content [details]="details$ | async" [imageSrc]="imageSrc">
+</app-details-content>
+
+<app-details-section [title]="'Residents'" [items]="residents$ | async" (itemSelected)="navigateToPerson($event)">
+</app-details-section>
+
+<app-details-section [title]="'Films'" [items]="films$ | async" (itemSelected)="navigateToFilm($event)">
+</app-details-section>
