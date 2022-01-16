@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { ExpandedPlanet } from '../model/planet';
+import { PlanetsService } from '../services/planets.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class PlanetResolver implements Resolve<boolean> {
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    return of(true);
+export class PlanetResolver implements Resolve<ExpandedPlanet> {
+  constructor(private planetService: PlanetsService) {}
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<ExpandedPlanet> {
+    const id = route.paramMap.get('id');
+
+    if (id) {
+      return this.planetService.getPlanet(id);
+    }
+
+    return Promise.reject();
   }
 }

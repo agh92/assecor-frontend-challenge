@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { ExpandedFilm } from '../model/film';
+import { FilmsService } from '../services/films.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class FilmResolver implements Resolve<boolean> {
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    return of(true);
+export class FilmResolver implements Resolve<ExpandedFilm> {
+  constructor(private filmService: FilmsService) {}
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<ExpandedFilm> {
+    const id = route.paramMap.get('id');
+
+    if (id) {
+      return this.filmService.getFilm(id);
+    }
+
+    return Promise.reject();
   }
 }

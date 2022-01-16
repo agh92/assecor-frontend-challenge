@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { ExpandedPerson } from '../model/person';
+import { PeopleService } from '../services/people.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class PersonResolver implements Resolve<boolean> {
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    return of(true);
+export class PersonResolver implements Resolve<ExpandedPerson> {
+  constructor(private peopleService: PeopleService) {}
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<ExpandedPerson> {
+    const id = route.paramMap.get('id');
+
+    if (id) {
+      return this.peopleService.getPerson(id);
+    }
+
+    return Promise.reject();
   }
 }
