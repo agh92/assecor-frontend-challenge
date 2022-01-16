@@ -1,0 +1,71 @@
+@import "../../styles/sizes";
+@import "../../styles/colors";
+
+.navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .selected {
+    border-bottom: 1px solid $primary-color;
+  }
+
+  li {
+    margin: 1rem;
+  }
+
+  a {
+    font: normal normal normal 14px/17px Roboto;
+    letter-spacing: 0;
+    opacity: 1;
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
+
+.navigation-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: $small-max-width) {
+  .navigation-btn {
+    z-index: 9999;
+    display: block;
+  }
+
+  .navigation {
+    z-index: 1000;
+    --gap: 2em;
+    align-content: center;
+    flex-direction: column;
+    width: 50%;
+    position: fixed;
+    inset: 0 0 0 50%;
+    background: hsl(0 0% 0% / 0.75);
+    transform: translateX(100%);
+  }
+
+  .navigation-mobile-show {
+    transform: translateX(0%);
+  }
+
+  @supports (backdrop-filter: blur(1rem)) {
+    .navigation {
+      background: hsl(0 0% 100% / 0.1);
+      backdrop-filter: blur(1rem);
+    }
+  }
+}

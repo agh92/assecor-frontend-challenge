@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     SearchComponent,
     NavigationComponent,
   ],
-  imports: [HttpClientModule, BrowserModule, AppRoutingModule],
+  imports: [FontAwesomeModule, HttpClientModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

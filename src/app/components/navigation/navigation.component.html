@@ -1,1 +1,19 @@
-<p>navigation works!</p>
+<button class="navigation-btn" (click)="toggleNavMenuIcon()">
+  <fa-icon [icon]="currentIcon"></fa-icon>
+</button>
+<nav>
+  <ul class="navigation" [class.navigation-mobile-show]="showMobileMenu">
+    <li>
+      <a routerLink="/home">Star wars</a>
+    </li>
+    <li [class.selected]="isFilmsSelected$ | async">
+      <a routerLink="/films">Films</a>
+    </li>
+    <li [class.selected]="isPeopleSelected$ | async ">
+      <a routerLink="/people">People</a>
+    </li>
+    <li [class.selected]="isPlanetsSelected$ | async">
+      <a routerLink="/planets">Planets</a>
+    </li>
+  </ul>
+</nav>
