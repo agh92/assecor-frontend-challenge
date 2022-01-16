@@ -7,8 +7,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SwapyInterceptor } from './interceptors/swapy.interceptor';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NavigationComponent,
   ],
   imports: [FontAwesomeModule, HttpClientModule, BrowserModule, AppRoutingModule],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: SwapyInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SwapyObject } from '../model/swapy.object';
 import { catchError, EMPTY, firstValueFrom, map, mergeMap, Observable, pipe, toArray } from 'rxjs';
+import { SwapyObject } from '../model/swapy.object';
+
+export const SWAPY_BASE_URL = 'https://swapi.dev/api/';
 
 export enum SwapyResource {
   People = 'https://swapi.dev/api/people',
