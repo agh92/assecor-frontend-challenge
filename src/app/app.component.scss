@@ -1,0 +1,22 @@
+.app__content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  .padded {
+    padding-left: 13vw;
+    padding-right: 13vw;
+  }
+
+  .separator {
+    border: 1px solid #10172C26;
+    box-shadow: 0 3px 6px #00000029;
+    left: 0;
+    right: 0;
+    margin: 0;
+  }
+
+  .bottom {
+    margin-top: auto;
+  }
+}
