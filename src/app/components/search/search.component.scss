@@ -1,0 +1,40 @@
+@import "../../styles/sizes";
+@import "../../styles/colors";
+
+.search-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 5rem;
+
+  display: none;
+
+  font-size: 2rem;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-input {
+  width: 9vw;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid $secondary-color;
+  border-radius: 2px;
+  background: #FFFFFF url('/assets/icons/search.svg') no-repeat right center;
+}
+
+@media (max-width: $medium-max-width) {
+  .search-input {
+    background: none;
+  }
+}
+
+@media (max-width: $small-max-width) {
+  .search-btn {
+    display: inline-block;
+  }
+
+  .search {
+    display: none;
+  }
+}
