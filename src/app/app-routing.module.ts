@@ -1,10 +1,34 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'films',
+    loadChildren: () =>
+      import('./films/films.module').then((m) => m.FilmsModule),
+  },
+  {
+    path: 'people',
+    loadChildren: () =>
+      import('./people/people.module').then((m) => m.PeopleModule),
+  },
+  {
+    path: 'planets',
+    loadChildren: () =>
+      import('./planets/planets.module').then((m) => m.PlanetsModule),
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full',
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+  },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
