@@ -16,6 +16,7 @@ function mapPeopleToCard(getImage: () => string) {
         details1: `Birth year: ${person.birth_year}`,
         details2: `Eye color: ${person.eye_color}`,
         details3: `Height: ${person.height} cm`,
+        showMoreNotice: true,
       };
     })
   );

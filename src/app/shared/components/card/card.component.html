@@ -1,11 +1,13 @@
 <div class="card" (click)="clicked()">
-  <img class="image" [src]="card?.imageSrc">
+  <img class="image"
+       [ngClass]="{'cover-image':!containImage, 'contain-image':containImage}"
+       [src]="card?.imageSrc">
   <div class="details">
-    <p class="title text">{{card?.title}}</p>
+    <p class="title text" [class.centered]="centerTitle">{{card?.title}}</p>
     <p class="detail text">{{card?.details1}}</p>
     <p class="detail text">{{card?.details2}}</p>
     <p class="detail text">{{card?.details3}}</p>
-    <p class="more text">More information ...</p>
+    <p *ngIf="card?.showMoreNotice" class="more text">More information ...</p>
   </div>
 </div>
 

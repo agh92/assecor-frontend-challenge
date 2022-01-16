@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export interface Card {
-  id: string;
+  id?: string;
   title: string;
   imageSrc: string;
-  details1: string | number;
-  details2: string;
-  details3: string | number;
+  details1?: string | number;
+  details2?: string;
+  details3?: string | number;
+  showMoreNotice?: boolean;
 }
 
 @Component({
@@ -16,6 +17,8 @@ export interface Card {
 })
 export class CardComponent {
   @Input() card?: Card;
+  @Input() containImage = false;
+  @Input() centerTitle = false;
 
   @Output() selected = new EventEmitter<string>();
 

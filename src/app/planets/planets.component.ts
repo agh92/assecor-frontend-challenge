@@ -16,6 +16,7 @@ function mapPlanetToCard(getImage: () => string) {
         details1: `Population: ${planet.population}`,
         details2: `Terrain: ${planet.terrain}`,
         details3: `Diameter: ${planet.diameter}`,
+        showMoreNotice: true,
       };
     })
   );

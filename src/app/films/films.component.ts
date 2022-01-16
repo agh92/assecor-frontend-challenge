@@ -16,6 +16,7 @@ function mapFilmToCard(getImage: () => string) {
         details1: `Director: ${film.director}`,
         details2: `Producer: ${film.producer}`,
         details3: `Released: ${film.release_date}`,
+        showMoreNotice: true,
       } as Card;
     })
   );

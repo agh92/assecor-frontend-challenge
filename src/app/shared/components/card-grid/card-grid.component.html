@@ -4,5 +4,6 @@
     <ng-container *ngFor="let card of cards">
       <app-card (selected)="selected($event)" [card]="card"></app-card>
     </ng-container>
+    <app-card (selected)="addNewSelected()" [card]="this.addCard" [containImage]="true" [centerTitle]="true"></app-card>
   </div>
 </div>
