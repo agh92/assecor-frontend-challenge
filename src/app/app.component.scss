@@ -1,4 +1,6 @@
-.app__content {
+@import "./styles/sizes";
+
+.app-content {
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -18,5 +20,12 @@
 
   .bottom {
     margin-top: auto;
+  }
+
+  @media (max-width: $small-max-width) {
+    .padded {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 }
