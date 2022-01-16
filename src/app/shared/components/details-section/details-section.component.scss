@@ -1,0 +1,22 @@
+@import "../../../styles/colors";
+
+.details-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1vw;
+
+  .item {
+    background: rgb(187, 187, 187, 24%) 0 0 no-repeat padding-box;
+    border-radius: 1px;
+
+    font: normal normal bold 14px/17px Roboto;
+    letter-spacing: 0;
+    color: $primary-color;
+
+    padding: 5px;
+
+    cursor: pointer;
+  }
+}
+

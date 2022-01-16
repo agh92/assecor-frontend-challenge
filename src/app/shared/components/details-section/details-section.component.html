@@ -1,1 +1,9 @@
-<p>details-section works!</p>
+<div>
+  <h1 [innerText]="title"></h1>
+  <div class="details-section">
+    <span *ngFor="let item of items"
+          (click)="selected(item.id)" class="item">
+      {{item.text}}
+    </span>
+  </div>
+</div>
