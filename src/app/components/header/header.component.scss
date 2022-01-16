@@ -1,0 +1,64 @@
+@import "../../styles/sizes";
+@import "../../styles/colors";
+
+.header {
+  height: 5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+
+    .text {
+      font-family: 'starwars';
+      color: $primary-color;
+      text-align: center;
+    }
+
+    .top {
+      margin-bottom: 0;
+    }
+
+    .bottom {
+      margin-top: 0;
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+
+    .left {
+      margin-right: auto;
+      order: 1;
+    }
+
+    .right {
+      margin-left: auto;
+      order: 2;
+    }
+  }
+}
+
+@media (max-width: $small-max-width) {
+  .menu {
+    justify-content: flex-end;
+    gap: 1em;
+  }
+
+  .left {
+    margin-right: 0;
+    order: 2;
+  }
+
+  .right {
+    margin-left: 0;
+    order: 1;
+  }
+}
