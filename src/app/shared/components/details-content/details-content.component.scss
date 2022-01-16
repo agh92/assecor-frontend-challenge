@@ -1,0 +1,42 @@
+.details-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .details {
+    order: 1
+  }
+
+  .image {
+    aspect-ratio: 2 / 1;
+    max-width: 50%;
+    max-height: 50vh;
+    object-fit: cover;
+
+    order: 2;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+@media (max-width: 60em) {
+  .details-content {
+    flex-direction: column;
+    gap: 1vh;
+
+    .image {
+      max-width: 100%;
+      order: 1;
+    }
+
+    .details {
+      order: 2
+    }
+  }
+}

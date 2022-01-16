@@ -1,1 +1,15 @@
-<p>details-content works!</p>
+<div class="details-content">
+  <div class="details">
+    <h3 class="no-margin bold">Details: </h3>
+
+    <ng-container *ngFor="let detail of details">
+      <p class="no-margin">
+        <span class="bold">{{detail.title}}:</span>
+        {{detail.text}}
+      </p>
+    </ng-container>
+
+    <p *ngIf="description">{{description}}</p>
+  </div>
+  <img class="image" [src]="imageSrc">
+</div>
