@@ -1,0 +1,43 @@
+@import "../../../styles/colors";
+
+.card {
+  background-color: rgb(187, 187, 187, 24%);
+  cursor: pointer;
+
+  .image {
+    width: 100%;
+    aspect-ratio: 1 / 0.8;
+    object-fit: cover;
+  }
+
+  .details {
+    margin: 0.5rem 0.5rem 2rem;
+    padding: 0.5rem;
+
+    .title {
+      font: normal normal bold 25px/30px Roboto;
+      max-width: 100%;
+      margin-top: 0;
+    }
+
+    .detail {
+      font: normal normal normal 14px/17px Roboto;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .more {
+      font: normal normal bold 12px/14px Roboto;
+    }
+
+    .text {
+      color: $primary-color;
+      letter-spacing: 0;
+
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<div class="card-grid">
+  <h1 class="title">{{title}}</h1>
+  <div class="grid">
+    <ng-container *ngFor="let card of cards">
+      <app-card (selected)="selected($event)" [card]="card"></app-card>
+    </ng-container>
+  </div>
+</div>

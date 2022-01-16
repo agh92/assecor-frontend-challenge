@@ -1,0 +1,22 @@
+@import "../../../styles/colors";
+
+.card-grid {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 1vh;
+
+  .title {
+    font: normal normal bold 75px/90px Roboto;
+    letter-spacing: 0;
+    color: $primary-color;
+    align-self: center;
+  }
+
+  .grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+}
+
