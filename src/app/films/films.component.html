@@ -1,1 +1,5 @@
-<p>films works!</p>
+<app-card-grid
+  (cardSelected)="goToOverview($event)"
+  [title]="'Films'"
+  [cards]="films$ | async"
+></app-card-grid>

@@ -28,4 +28,16 @@ export class NavigationService {
       filter((rootPath) => isTab(rootPath))
     ) as Observable<Tab>;
   }
+
+  navigateToFilm(id: string) {
+    this.router.navigate([`films/${id}`]);
+  }
+
+  navigateToPerson(id: string) {
+    this.router.navigate([`people/${id}`]);
+  }
+
+  navigateToPlanet(id: string) {
+    this.router.navigate([`planets/${id}`]);
+  }
 }

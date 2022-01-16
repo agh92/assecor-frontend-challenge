@@ -1,1 +1,5 @@
-<p>planets works!</p>
+<app-card-grid
+  (cardSelected)="goToOverview($event)"
+  [title]="'Planets'"
+  [cards]="planets$ | async"
+></app-card-grid>
