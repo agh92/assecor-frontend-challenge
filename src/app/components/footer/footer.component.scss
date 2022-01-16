@@ -1,0 +1,10 @@
+@import "../../styles/colors";
+
+.footer {
+  padding-top: 3vh;
+  height: 3rem;
+  font: normal normal bold 14px/17px Roboto;
+  color: $secondary-color;
+
+  vertical-align: center;
+}
