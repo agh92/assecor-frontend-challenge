@@ -11,6 +11,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SwapyInterceptor } from './core/interceptors/swapy.interceptor';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormComponent } from './core/components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     SearchComponent,
     NavigationComponent,
+    FormComponent,
   ],
   imports: [FontAwesomeModule, NgbModalModule, HttpClientModule, BrowserModule, AppRoutingModule],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: SwapyInterceptor, multi: true }],
