@@ -15,8 +15,13 @@ export class DetailsSectionComponent {
   @Input() items?: SectionItem[] | null;
 
   @Output() itemSelected = new EventEmitter<string>();
+  @Output() addNew = new EventEmitter<void>();
 
   selected(id: string) {
     this.itemSelected.emit(id);
+  }
+
+  addNewItem() {
+    this.addNew.emit();
   }
 }
