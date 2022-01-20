@@ -5,9 +5,11 @@
   <app-details-content [details]="details$ | async" [imageSrc]="imageSrc">
   </app-details-content>
 
-  <app-details-section [title]="'Films'" [items]="films$ | async" (itemSelected)="navigateToFilm($event)">
+  <app-details-section [title]="'Films'" [items]="films$ | async"
+                       (itemSelected)="navigateToFilm($event)" (addNew)="addNewFilm()">
   </app-details-section>
 
-  <app-details-section [title]="'Home'" [items]="home$ | async" (itemSelected)="navigateToPlanet($event)">
+  <app-details-section [title]="'Home'" [items]="home$ | async"
+                       (itemSelected)="navigateToPlanet($event)" (addNew)="addNewPlanet()">
   </app-details-section>
 </div>

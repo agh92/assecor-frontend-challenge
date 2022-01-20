@@ -6,6 +6,7 @@ import { RandomImageService } from '../../../core/services/random-image.service'
 import { SectionItem } from '../../../shared/components/details-section/details-section.component';
 import { ExpandedFilm, ExpandedObject } from '../../model/film';
 import { NavigationService } from '../../../core/services/navigation.service';
+import { ModalService } from '../../../core/services/modal.service';
 
 const attributeToTitle: { [key: string]: string } = {
   director: 'Director',
@@ -38,7 +39,8 @@ export class FilmDetailsComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private randomImageService: RandomImageService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private modalService: ModalService
   ) {}
 
   ngOnInit(): void {
@@ -75,5 +77,13 @@ export class FilmDetailsComponent implements OnInit {
 
   navigateToPlanet(planetId: string) {
     this.navigationService.navigateToPlanet(planetId);
+  }
+
+  addNewPlanet() {
+    this.modalService.openPlanetForm();
+  }
+
+  addNewPerson() {
+    this.modalService.openPersonForm();
   }
 }

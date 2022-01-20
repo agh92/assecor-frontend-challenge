@@ -6,6 +6,7 @@ import { Detail } from '../../../shared/components/details-content/details-conte
 import { SectionItem } from '../../../shared/components/details-section/details-section.component';
 import { RandomImageService } from '../../../core/services/random-image.service';
 import { NavigationService } from '../../../core/services/navigation.service';
+import { ModalService } from '../../../core/services/modal.service';
 
 const attributeToTitle: { [k: string]: string } = {
   height: 'Height',
@@ -34,7 +35,8 @@ export class PersonDetailsComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private randomImageService: RandomImageService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private modalService: ModalService
   ) {}
 
   ngOnInit(): void {
@@ -69,5 +71,13 @@ export class PersonDetailsComponent implements OnInit {
 
   navigateToPlanet(planetId: string) {
     this.navigationService.navigateToPlanet(planetId);
+  }
+
+  addNewFilm() {
+    this.modalService.openFilmForm();
+  }
+
+  addNewPlanet() {
+    this.modalService.openPlanetForm();
   }
 }

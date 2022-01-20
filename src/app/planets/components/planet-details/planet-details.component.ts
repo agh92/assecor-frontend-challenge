@@ -6,6 +6,7 @@ import { Detail } from '../../../shared/components/details-content/details-conte
 import { RandomImageService } from '../../../core/services/random-image.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavigationService } from '../../../core/services/navigation.service';
+import { ModalService } from '../../../core/services/modal.service';
 
 const attributeToTitle: { [k: string]: string } = {
   population: 'Population',
@@ -35,7 +36,8 @@ export class PlanetDetailsComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private randomImageService: RandomImageService,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private modalService: ModalService
   ) {}
 
   ngOnInit(): void {
@@ -72,5 +74,13 @@ export class PlanetDetailsComponent implements OnInit {
 
   navigateToPerson(personId: string) {
     this.navigationService.navigateToPerson(personId);
+  }
+
+  addNewPerson() {
+    this.modalService.openPersonForm();
+  }
+
+  addNewFilm() {
+    this.modalService.openFilmForm();
   }
 }
