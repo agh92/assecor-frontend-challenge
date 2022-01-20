@@ -10,6 +10,7 @@ import { NavigationComponent } from './core/components/navigation/navigation.com
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SwapyInterceptor } from './core/interceptors/swapy.interceptor';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { SwapyInterceptor } from './core/interceptors/swapy.interceptor';
     SearchComponent,
     NavigationComponent,
   ],
-  imports: [FontAwesomeModule, HttpClientModule, BrowserModule, AppRoutingModule],
+  imports: [FontAwesomeModule, NgbModalModule, HttpClientModule, BrowserModule, AppRoutingModule],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: SwapyInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
