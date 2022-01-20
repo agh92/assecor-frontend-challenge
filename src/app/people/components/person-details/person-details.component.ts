@@ -19,6 +19,7 @@ const attributeToTitle: { [k: string]: string } = {
 @Component({
   selector: 'app-person-details',
   templateUrl: './person-details.component.html',
+  styleUrls: ['./person-details.component.scss'],
 })
 export class PersonDetailsComponent implements OnInit {
   people$?: Observable<ExpandedPerson>;

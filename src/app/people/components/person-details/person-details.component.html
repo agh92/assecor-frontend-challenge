@@ -1,11 +1,13 @@
-<app-details-header [title]="'Character Details'" [subtitle]="(people$|async)?.name">
-</app-details-header>
+<div class="person-details">
+  <app-details-header [title]="'Character Details'" [subtitle]="(people$|async)?.name">
+  </app-details-header>
 
-<app-details-content [details]="details$ | async" [imageSrc]="imageSrc">
-</app-details-content>
+  <app-details-content [details]="details$ | async" [imageSrc]="imageSrc">
+  </app-details-content>
 
-<app-details-section [title]="'Films'" [items]="films$ | async" (itemSelected)="navigateToFilm($event)">
-</app-details-section>
+  <app-details-section [title]="'Films'" [items]="films$ | async" (itemSelected)="navigateToFilm($event)">
+  </app-details-section>
 
-<app-details-section [title]="'Home'" [items]="home$ | async" (itemSelected)="navigateToPlanet($event)">
-</app-details-section>
+  <app-details-section [title]="'Home'" [items]="home$ | async" (itemSelected)="navigateToPlanet($event)">
+  </app-details-section>
+</div>

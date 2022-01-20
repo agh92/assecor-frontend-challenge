@@ -1,12 +1,15 @@
-<app-details-header [title]="'Film Details'" [subtitle]="(film$|async)?.title"
-                    [hint]="'Episode ' + (film$|async)?.episode_id">
-</app-details-header>
+<div class="film-details">
+  <app-details-header [title]="'Film Details'" [subtitle]="(film$|async)?.title"
+                      [hint]="'Episode ' + (film$|async)?.episode_id">
+  </app-details-header>
 
-<app-details-content [details]="details$ | async" [description]="(film$ | async)?.opening_crawl" [imageSrc]="imageSrc">
-</app-details-content>
+  <app-details-content [details]="details$ | async" [description]="(film$ | async)?.opening_crawl"
+                       [imageSrc]="imageSrc">
+  </app-details-content>
 
-<app-details-section [title]="'Characters'" [items]="characters$ | async" (itemSelected)="navigateToPerson($event)">
-</app-details-section>
+  <app-details-section [title]="'Characters'" [items]="characters$ | async" (itemSelected)="navigateToPerson($event)">
+  </app-details-section>
 
-<app-details-section [title]="'Planets'" [items]="planets$ | async" (itemSelected)="navigateToPlanet($event)">
-</app-details-section>
+  <app-details-section [title]="'Planets'" [items]="planets$ | async" (itemSelected)="navigateToPlanet($event)">
+  </app-details-section>
+</div>
