@@ -4,8 +4,8 @@ import { filter, map, mergeMap, Observable, take, toArray } from 'rxjs';
 import { ExpandedPerson } from '../../model/person';
 import { Detail } from '../../../shared/components/details-content/details-content.component';
 import { SectionItem } from '../../../shared/components/details-section/details-section.component';
-import { RandomImageService } from '../../../services/random-image.service';
-import { NavigationService } from '../../../services/navigation.service';
+import { RandomImageService } from '../../../core/services/random-image.service';
+import { NavigationService } from '../../../core/services/navigation.service';
 
 const attributeToTitle: { [k: string]: string } = {
   height: 'Height',

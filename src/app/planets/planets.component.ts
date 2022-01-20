@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { map, mergeMap, Observable, pipe, take, toArray } from 'rxjs';
 import { Card } from '../shared/components/card/card.component';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RandomImageService } from '../services/random-image.service';
+import { RandomImageService } from '../core/services/random-image.service';
 import { Planet } from './model/planet';
-import { NavigationService } from '../services/navigation.service';
+import { NavigationService } from '../core/services/navigation.service';
 
 function mapPlanetToCard(getImage: () => string) {
   return pipe(

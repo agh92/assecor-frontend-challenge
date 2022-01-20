@@ -1,4 +1,4 @@
-import { SwapyObject } from '../../model/swapy.object';
+import { SwapyObject } from '../../core/model/swapy.object';
 
 export interface Planet extends SwapyObject {
   name: string;

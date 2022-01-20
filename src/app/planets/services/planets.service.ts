@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SwapyResource, SwapyService } from '../../services/swapy.service';
+import { SwapyResource, SwapyService } from '../../core/services/swapy.service';
 import { ExpandedFilm, ExpandedPlanet, ExpandedResident, Planet } from '../model/planet';
 import { firstValueFrom, Observable } from 'rxjs';
 

@@ -3,9 +3,9 @@ import { filter, map, mergeMap, Observable, take, toArray } from 'rxjs';
 import { ExpandedPlanet } from '../../model/planet';
 import { SectionItem } from '../../../shared/components/details-section/details-section.component';
 import { Detail } from '../../../shared/components/details-content/details-content.component';
-import { RandomImageService } from '../../../services/random-image.service';
+import { RandomImageService } from '../../../core/services/random-image.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NavigationService } from '../../../services/navigation.service';
+import { NavigationService } from '../../../core/services/navigation.service';
 
 const attributeToTitle: { [k: string]: string } = {
   population: 'Population',

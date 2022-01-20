@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, map, mergeMap, Observable, pipe, take, toArray } from 'rxjs';
 import { Detail } from '../../../shared/components/details-content/details-content.component';
-import { RandomImageService } from '../../../services/random-image.service';
+import { RandomImageService } from '../../../core/services/random-image.service';
 import { SectionItem } from '../../../shared/components/details-section/details-section.component';
 import { ExpandedFilm, ExpandedObject } from '../../model/film';
-import { NavigationService } from '../../../services/navigation.service';
+import { NavigationService } from '../../../core/services/navigation.service';
 
 const attributeToTitle: { [key: string]: string } = {
   director: 'Director',

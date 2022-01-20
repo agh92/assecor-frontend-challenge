@@ -1,4 +1,4 @@
-import { SwapyObject } from '../../model/swapy.object';
+import { SwapyObject } from '../../core/model/swapy.object';
 
 export interface Film extends SwapyObject {
   characters: string[];
