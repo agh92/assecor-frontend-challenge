@@ -21,12 +21,12 @@
     flex-grow: 1;
 
     .left {
-      margin-right: auto;
+      flex-basis: 80%;
       order: 1;
     }
 
     .right {
-      margin-left: auto;
+      flex-basis: 20%;
       order: 2;
     }
   }
