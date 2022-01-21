@@ -1,13 +1,17 @@
-<div class="app-content">
+<div class="header-container">
   <div class="padded">
     <app-header></app-header>
   </div>
-  <hr class="separator"/>
-  <div class="padded">
+  <hr class="separator" />
+</div>
+<div class="app-content">
+  <div class="main padded">
     <router-outlet></router-outlet>
   </div>
-  <hr class="separator bottom"/>
-  <div class="padded">
-    <app-footer></app-footer>
+  <div class="bottom">
+    <hr class="separator" />
+    <div class="padded">
+      <app-footer></app-footer>
+    </div>
   </div>
 </div>

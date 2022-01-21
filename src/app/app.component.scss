@@ -1,32 +1,45 @@
 @import "./styles/sizes";
 
+.header-container {
+  top: 0;
+  position: sticky;
+  z-index: 999;
+  background-color: #FFFFFF;
+}
+
+.padded {
+  padding-bottom: 1vh;
+  padding-left: 13vw;
+  padding-right: 13vw;
+}
+
+.separator {
+  border: 1px solid #10172C26;
+  box-shadow: 0 3px 6px #00000029;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+
+@media (max-width: $small-max-width) {
+  .padded {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .app-content {
+  position: absolute;
+  inset: 5rem 0 0 0;
+
   display: flex;
   flex-direction: column;
-  min-height: 100%;
 
-  .padded {
-    padding-bottom: 1vh;
-    padding-left: 13vw;
-    padding-right: 13vw;
-  }
-
-  .separator {
-    border: 1px solid #10172C26;
-    box-shadow: 0 3px 6px #00000029;
-    left: 0;
-    right: 0;
-    margin: 0;
+  .main {
+    flex-grow: 1;
   }
 
   .bottom {
-    margin-top: auto;
-  }
-
-  @media (max-width: $small-max-width) {
-    .padded {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
+    flex-grow: 0;
   }
 }
