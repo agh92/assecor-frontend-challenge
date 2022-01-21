@@ -10,7 +10,7 @@ import { NavigationService } from '../../services/navigation.service';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent implements OnInit {
-  showMobileMenu = false;
+  isShowMobileMenu = false;
 
   currentIcon = faBars;
   faBars = faBars;
@@ -37,12 +37,7 @@ export class NavigationComponent implements OnInit {
   }
 
   toggleNavMenuIcon() {
-    if (this.currentIcon === faBars) {
-      this.showMobileMenu = true;
-      this.currentIcon = faTimes;
-    } else {
-      this.showMobileMenu = false;
-      this.currentIcon = faBars;
-    }
+    this.currentIcon = this.isShowMobileMenu ? faBars : faTimes;
+    this.isShowMobileMenu = !this.isShowMobileMenu;
   }
 }

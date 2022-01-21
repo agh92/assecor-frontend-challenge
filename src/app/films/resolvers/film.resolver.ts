@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { ExpandedFilm } from '../model/film';
 import { FilmsService } from '../services/films.service';
 
@@ -12,10 +12,6 @@ export class FilmResolver implements Resolve<ExpandedFilm> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<ExpandedFilm> {
     const id = route.paramMap.get('id');
 
-    if (id) {
-      return this.filmService.getFilm(id);
-    }
-
-    return Promise.reject();
+    return id ? this.filmService.getFilm(id) : Promise.reject();
   }
 }

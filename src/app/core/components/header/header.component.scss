@@ -2,16 +2,17 @@
 @import "../../../styles/colors";
 
 .header {
-  height: 5rem;
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 
+  height: 7vh;
+
   .logo {
     max-height: 30%;
     object-fit: contain;
+    cursor: pointer;
   }
 
   .menu {
