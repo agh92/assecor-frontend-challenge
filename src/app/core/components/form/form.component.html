@@ -1,1 +1,22 @@
-<p>form works!</p>
+<form class="form-container">
+  <h1 class="form-title">{{options?.title}}</h1>
+  <div class="form-group-container">
+    <ng-container *ngFor="let group of options?.groups">
+      <div class="form-row">
+        <div class="form-group" *ngFor="let input of group">
+          <label class="group-label">{{input.label}}</label>
+          <input *ngIf="isInput(input)" class="form-control form-input" placeholder="{{input.extra}}">
+          <textarea *ngIf="isTextArea(input)" class="form-control form-input fixed-size" rows="3"
+                    placeholder="{{input.extra}}"></textarea>
+          <select *ngIf="isDropDown(input)" class="form-control form-select">
+            <option *ngFor="let extra of getDropDownExtra(input)">{{extra}}</option>
+          </select>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="form-buttons">
+    <button class="form-button" (click)="closeModal($event)">Cancel</button>
+    <button class="form-button submit-button" (click)="closeModal($event)">{{options?.title}}</button>
+  </div>
+</form>

@@ -11,4 +11,13 @@ html, body {
 
 body {
   margin: 0;
+.blur-background {
+  background: hsl(0 0% 0% / 0.75);
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  .blur-background {
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+  }
 }

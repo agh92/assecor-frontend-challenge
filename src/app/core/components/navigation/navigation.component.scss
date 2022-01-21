@@ -54,18 +54,10 @@
     width: 50%;
     position: fixed;
     inset: 0 0 0 50%;
-    background: hsl(0 0% 0% / 0.75);
     transform: translateX(100%);
   }
 
   .navigation-mobile-show {
     transform: translateX(0%);
-  }
-
-  @supports (backdrop-filter: blur(1rem)) {
-    .navigation {
-      background: hsl(0 0% 100% / 0.1);
-      backdrop-filter: blur(1rem);
-    }
   }
 }
