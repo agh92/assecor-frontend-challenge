@@ -7,32 +7,30 @@
   gap: 1vh;
   margin-bottom: 2rem;
 
+
+  color: $primary-color;
+  font-family: Roboto, serif;
+
   .title {
     font-weight: 300;
-    font-family: Roboto, serif;
     font-size: max(2vw, 20px);
     line-height: max(3vw, 25px);
-    color: $primary-color;
     margin-bottom: 0;
     border-bottom: 1px solid $primary-color;
   }
 
   .subtitle {
     font-weight: bold;
-    font-family: Roboto, serif;
     font-size: max(3vw, 30px);
     line-height: max(4vw, 35px);
-    color: $primary-color;
     margin: 0;
     text-align: center;
   }
 
   .hint {
     font-weight: 300;
-    font-family: Roboto, serif;
     font-size: max(1vw, 15px);
     line-height: max(2vw, 17px);
-    color: $primary-color;
     margin-top: 0;
   }
 }

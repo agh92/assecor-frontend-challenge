@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { ExpandedPlanet } from '../model/planet';
 import { PlanetsService } from '../services/planets.service';
 
@@ -12,10 +12,6 @@ export class PlanetResolver implements Resolve<ExpandedPlanet> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<ExpandedPlanet> {
     const id = route.paramMap.get('id');
 
-    if (id) {
-      return this.planetService.getPlanet(id);
-    }
-
-    return Promise.reject();
+    return id ? this.planetService.getPlanet(id) : Promise.reject();
   }
 }

@@ -40,4 +40,8 @@ export class NavigationService {
   navigateToPlanet(id: string) {
     this.router.navigate([`planets/${id}`]);
   }
+
+  navigateHome() {
+    this.router.navigate(['home']);
+  }
 }

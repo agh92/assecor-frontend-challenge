@@ -1,7 +1,7 @@
 @import "../../../styles/colors";
 
 .card {
-  background-color: rgb(187, 187, 187, 24%);
+  background-color: $secondary-color-light;
   cursor: pointer;
 
   .image {

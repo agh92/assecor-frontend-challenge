@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { ExpandedPerson } from '../model/person';
 import { PeopleService } from '../services/people.service';
 
@@ -12,10 +12,6 @@ export class PersonResolver implements Resolve<ExpandedPerson> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<ExpandedPerson> {
     const id = route.paramMap.get('id');
 
-    if (id) {
-      return this.peopleService.getPerson(id);
-    }
-
-    return Promise.reject();
+    return id ? this.peopleService.getPerson(id) : Promise.reject();
   }
 }

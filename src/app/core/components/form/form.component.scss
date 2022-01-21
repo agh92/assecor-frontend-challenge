@@ -1,9 +1,9 @@
 @import "../../../styles/colors";
 
 .form-container {
-  padding: 2rem;
   display: flex;
   flex-direction: column;
+  padding: 2em;
   gap: 3rem;
 
   .form-group-container {
@@ -71,7 +71,6 @@
 
   .submit-button {
     background-color: $primary-color;
-    color: #FFFFFF;
+    color: $background-color;
   }
-
 }
